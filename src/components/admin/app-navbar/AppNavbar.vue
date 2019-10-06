@@ -1,3 +1,37 @@
+<template>
+  <va-navbar class="app-navbar">
+    <header-selector slot="selector" :minimized.sync="minimizedProxy"/>
+    <template slot="logo">
+      <va-icon-vuestic/>
+    </template>
+    <template slot="center">
+      <div class="row flex-nowrap align--center justify--space-between">
+        <div>
+          <va-button
+            href="https://github.com/epicmaxco/vuestic-admin"
+            color="#000000"
+            class="app-navbar__button text--bold"
+            icon="fa fa-github"
+            target="_blank"
+          >
+            {{$t('navbar.support')}}
+          </va-button>
+        </div>
+      </div>
+    </template>
+    <div class="app-navbar__actions row flex-nowrap align--right">
+      <!--<settings-dropdown-->
+        <!--class="va-navbar__item"-->
+        <!--:navbar-view.sync="navbarViewProxy"-->
+      <!--/>-->
+      <language-dropdown class="va-navbar__item"/>
+      <profile-dropdown class="va-navbar__item">
+        <span>{{userName}}</span>
+      </profile-dropdown>
+    </div>
+  </va-navbar>
+</template>
+
 <script>
 import VaIconVuestic
   from 'vuestic-ui/src/components/vuestic-components/va-icon/va-iconset/VaIconVuestic'
